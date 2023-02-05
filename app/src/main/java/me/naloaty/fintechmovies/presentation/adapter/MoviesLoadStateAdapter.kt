@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
-import me.naloaty.fintechmovies.databinding.LayoutMovieListItemBinding
+import me.naloaty.fintechmovies.databinding.LayoutMovieItemPlaceholderBinding
 import javax.inject.Inject
 
 class MoviesLoadStateAdapter @Inject constructor():
@@ -19,7 +19,7 @@ class MoviesLoadStateAdapter @Inject constructor():
         loadState: LoadState
     ): MoviesLoadStateViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = LayoutMovieListItemBinding.inflate(inflater, parent, false)
+        val binding = LayoutMovieItemPlaceholderBinding.inflate(inflater, parent, false)
 
         return MoviesLoadStateViewHolder(binding)
     }

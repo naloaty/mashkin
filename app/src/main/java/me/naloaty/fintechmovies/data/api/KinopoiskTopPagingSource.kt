@@ -37,6 +37,7 @@ class KinopoiskTopPagingSource @Inject constructor(
                 LoadResult.Error(HttpException(response))
             }
         } catch (e: Exception) {
+            e.printStackTrace()
             LoadResult.Error(e)
         }
     }

@@ -10,4 +10,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="naive_blue">#0094FF</color>
     <color name="pale_blue">#D4D7ECFF</color>
+    <color name="placeholder">#CDCDCD</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

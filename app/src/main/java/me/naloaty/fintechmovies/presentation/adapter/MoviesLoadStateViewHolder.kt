@@ -3,10 +3,10 @@ package me.naloaty.fintechmovies.presentation.adapter
 import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.RecyclerView
-import me.naloaty.fintechmovies.databinding.LayoutMovieListItemBinding
+import me.naloaty.fintechmovies.databinding.LayoutMovieItemPlaceholderBinding
 
 class MoviesLoadStateViewHolder(
-    private val binding: LayoutMovieListItemBinding
+    private val binding: LayoutMovieItemPlaceholderBinding
 ): RecyclerView.ViewHolder(binding.root) {
 
     fun bind(loadState: LoadState) = with(binding) {

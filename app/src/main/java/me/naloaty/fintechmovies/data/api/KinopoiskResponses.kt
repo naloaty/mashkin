@@ -60,15 +60,15 @@ data class MovieListResponse(
 @Serializable
 data class MovieBriefResponse(
     val filmId: Int,
-    val nameRu: String,
-    val nameEn: String,
-    val year: String,
-    val filmLength: String,
+    val nameRu: String?,
+    val nameEn: String?,
+    val year: String?,
+    val filmLength: String?,
     val countries: List<Country>,
     val genres: List<Genre>,
     val posterUrl: String,
     val posterUrlPreview: String,
-    val rating: String,
+    val rating: String?,
     val ratingVoteCount: Int
 )
 

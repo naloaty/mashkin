@@ -34,54 +34,43 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/iv_poster"
+                <View
+                    android:id="@+id/ph_poster"
                     android:layout_width="40dp"
                     android:layout_height="63dp"
-                    android:scaleType="centerCrop"
-                    tools:src="@drawable/ic_launcher_background"
-                    android:contentDescription="@string/content_movie_poster" />
+                    android:background="@drawable/placeholder" />
 
             </androidx.cardview.widget.CardView>
 
 
-            <TextView
-                android:id="@+id/tv_title"
-                style="?android:attr/textAppearanceMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <View
+                android:id="@+id/ph_title"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/black"
-                android:textFontWeight="500"
-                android:textSize="16sp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/placeholder"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toEndOf="@+id/cv_poster"
-                app:layout_constraintTop_toTopOf="@+id/cv_poster"
-                tools:text="Щелкунчик" />
+                app:layout_constraintTop_toTopOf="@+id/cv_poster" />
 
-            <TextView
-                android:id="@+id/tv_description"
-                style="?android:attr/textAppearanceMedium"
+            <View
+                android:id="@+id/ph_description"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="96dp"
+                android:background="@drawable/placeholder"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/ph_title"
+                app:layout_constraintTop_toBottomOf="@+id/ph_title" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:textSize="14sp"
-                android:textColor="@color/gray_60"
-                android:textFontWeight="500"
-                app:layout_constraintStart_toStartOf="@+id/tv_title"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title"
-                tools:text="Фэнтэзи (2018)" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginEnd="14dp"
-                app:tint="?colorPrimary"
-                android:contentDescription="@string/content_movie_favorites_indicator"
-                android:src="@drawable/ic_round_star_border_24"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_title" />
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

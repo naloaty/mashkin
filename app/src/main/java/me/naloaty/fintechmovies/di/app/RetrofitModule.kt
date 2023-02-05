@@ -10,10 +10,13 @@ import me.naloaty.fintechmovies.data.api.ApiKeyAuthInterceptor
 import me.naloaty.fintechmovies.data.api.KinopoiskService
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
 private const val KINOPOISK_BASE_URL = "https://kinopoiskapiunofficial.tech/"
+
+
 
 @Module
 class RetrofitModule {
@@ -21,8 +24,11 @@ class RetrofitModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         return OkHttpClient().newBuilder()
             .addInterceptor(ApiKeyAuthInterceptor(BuildConfig.KINOPOISK_API_KEY))
+            .addInterceptor(loggingInterceptor)
             .build()
     }
 
@@ -31,11 +37,14 @@ class RetrofitModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         val mediaType = "application/json".toMediaType()
+        val json = Json {
+            ignoreUnknownKeys = true
+        }
 
         return Retrofit.Builder()
             .baseUrl(KINOPOISK_BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(Json.asConverterFactory(mediaType))
+            .addConverterFactory(json.asConverterFactory(mediaType))
             .build()
     }
 

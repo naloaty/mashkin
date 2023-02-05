@@ -1,9 +1,11 @@
 package me.naloaty.fintechmovies.presentation.popular
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
@@ -37,8 +39,9 @@ class PopularMoviesFragment : BaseFragment(R.layout.fragment_popular_movies) {
         observeViewModel()
     }
 
-    private fun setupRecyclerView() {
-        binding.rvMovies.adapter = moviesAdapter.withLoadStateAdapters(
+    private fun setupRecyclerView() = with(binding) {
+        rvMovies.layoutManager = LinearLayoutManager(context)
+        rvMovies.adapter = moviesAdapter.withLoadStateAdapters(
             header = initialMoviesLoadStateAdapter,
             footer = moviesLoadStateAdapter
         )

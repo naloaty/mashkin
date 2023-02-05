@@ -8,17 +8,28 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"
+        android:name="me.naloaty.fintechmovies.presentation.popular.PopularMoviesFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".presentation.MainActivity"
-        tools:layout="@layout/fragment_popular_movies"
-        android:name="me.naloaty.fintechmovies.presentation.popular.PopularMoviesFragment" />
+        tools:layout="@layout/fragment_popular_movies" />
 
-    <me.ibrahimsn.lib.SmoothBottomBar
+    <!--View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@drawable/linear_gradient_navigation"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" /-->
+
+    <!--me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        app:backgroundColor="?colorSurface"
+        app:backgroundColor="@color/transparent"
         app:indicatorColor="?colorPrimary"
         app:iconTint="?colorPrimary"
         app:iconTintActive="@color/white"
@@ -26,6 +37,6 @@
         app:iconSize="22dp"
         app:sideMargins="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu_bottom" />
+        app:menu="@menu/menu_bottom" /-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

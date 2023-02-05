@@ -8,8 +8,8 @@ import me.naloaty.fintechmovies.domain.models.MovieDetails
 fun MovieBriefResponse.toMovieBrief(): MovieBrief {
     return MovieBrief(
         id = this.filmId,
-        title = this.nameRu, // TODO: Add locale settings
-        year = this.year.toInt(),
+        title = this.nameRu ?: "", // TODO: Add locale settings
+        year = this.year?.toInt() ?: -1,
         genres = this.genres.map { it.genre },
         countries = this.countries.map { it.country },
         posterUrl = this.posterUrl,

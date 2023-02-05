@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:src="@drawable/ic_launcher_background"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Чебурашка"
+            tools:layout_editor_absoluteX="276dp"
+            tools:layout_editor_absoluteY="146dp" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Lorem ipsum"
+            tools:layout_editor_absoluteX="276dp"
+            tools:layout_editor_absoluteY="44dp" />
+
+        <TextView
+            android:id="@+id/tv_genres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Жанры: фантастика"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="122dp" />
+
+        <TextView
+            android:id="@+id/tv_countries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Страны: Россия"
+            tools:layout_editor_absoluteX="128dp"
+            tools:layout_editor_absoluteY="140dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
